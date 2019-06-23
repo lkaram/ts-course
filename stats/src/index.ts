@@ -1,7 +1,6 @@
-import fs from "fs";
+import { MatchReader } from "./MatchReader";
 
-const matches = fs.readFileSync("football.csv", {
-  encoding: "utf-8"
-});
+const reader = new MatchReader("football.csv");
 
-console.log(matches);
+reader.read();
+console.log(reader.data[0]);
